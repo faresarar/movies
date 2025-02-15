@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/home_screen.dart';
+
 void main() {
   runApp(const MoviesApp());
 }
@@ -25,9 +27,7 @@ class MoviesApp extends StatelessWidget {
           )
         ),
       ),
-      home: const Center(
-        child: Text("Movie App"),
-      ),
+      home: HomeScreen(),
     );
   }
 }
