@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class MovieService {
@@ -45,5 +47,15 @@ class MovieService {
       throw('Error');
     }
   }
-
+  Future<List<dynamic>> similarMovies({required int movieId}) async {
+    final response = await http.get(
+        Uri.parse(
+            'https://api.themoviedb.org/3/movie/$movieId/similar?language=en-US&page=1'),
+        headers: headers);
+    if (response.statusCode == 200) {
+      return json.decode(response.body)['results'];
+    } else {
+      throw Exception('Error');
+    }
+  }
 }
