@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'screens/root_screen.dart';
+import 'package:movies/screens/splash_screen.dart';
 
 void main() {
   runApp(const MoviesApp());
@@ -28,7 +27,7 @@ class MoviesApp extends StatelessWidget {
           )
         ),
       ),
-      home: RootScreen(),
+      home: SplashScreen(),
     );
   }
 }
