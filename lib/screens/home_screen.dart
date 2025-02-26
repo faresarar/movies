@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movies/widgets/movies_slider.dart';
 
 import '../services/movie_service.dart';
+import '../widgets/horizontal_view_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -66,7 +67,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        MoviesSlider(topRatedMovies: topRatedMovies,)
+                        MoviesSlider(topRatedMovies: topRatedMovies,),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            'Upcoming Movies',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        HorizontalView(movies: upComingMovies),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            'Popular Movies',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        HorizontalView(movies: popularMovies)
                       ],
                     )
                   ],
