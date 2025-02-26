@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
+import 'movies_screen.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
@@ -19,9 +20,7 @@ class _RootScreenState extends State<RootScreen> {
         controller: pageController,
         children: [
           HomeScreen(),
-          Center(
-            child: Text("Movies App 2"),
-          ),
+          MoviesScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
