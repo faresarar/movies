@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movies/services/movie_service.dart';
 
+import 'movie_details_screen.dart';
+
 class MoviesScreen extends StatefulWidget {
   const MoviesScreen({super.key});
 
@@ -44,7 +46,14 @@ class _MoviesScreenState extends State<MoviesScreen> {
                 (index) {
                   final movie = upComingMovies[index];
                   return GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MovieDetailsScreen(movie: movie),
+                        ),
+                      );
+                    },
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
